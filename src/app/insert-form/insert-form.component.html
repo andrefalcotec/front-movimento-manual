@@ -1,0 +1,42 @@
+<form class="example-form" #movimentoManual = "ngForm" (ngSubmit) = "submitForm(movimentoManual)">
+    <mat-form-field class="example-medium-width" appearance="outline" floatLabel="always">
+      <mat-label>Mês</mat-label>
+      <input [disabled]="isDisabled" name="datMes" matInput placeholder="Ex. 08" ngModel>
+    </mat-form-field>
+  <mat-form-field class="example-medium-width" appearance="outline" floatLabel="always">
+    <mat-label>Ano</mat-label>
+    <input [disabled]="isDisabled" name="datAno" matInput placeholder="Ex. 2021" ngModel>
+  </mat-form-field>
+<br>
+<mat-form-field class="example-medium-width" appearance="outline">
+  <mat-label>Produto</mat-label>
+  <mat-select [disabled]="isDisabled" name="produto" ngModel>
+    <mat-option *ngFor="let item of produtoList" [value]="item">{{item.desProduto}}</mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field class="example-medium-width" appearance="outline">
+  <mat-label>Cosif</mat-label>
+  <mat-select [disabled]="isDisabled" name="produtoCosif" ngModel>
+    <mat-option *ngFor="let item of produtoCosifList" [value]="item">{{item.codCosif}} - {{item.codClassificacao}}</mat-option>
+  </mat-select>
+</mat-form-field>
+<br>
+<mat-form-field class="example-medium-width" appearance="outline" floatLabel="always">
+  <mat-label>Valor(R$)</mat-label>
+  <input [disabled]="isDisabled" name="valValor" matInput placeholder="Ex. 150.00" ngModel>
+</mat-form-field>
+<br>
+    <mat-form-field class="example-full-width" appearance="outline" floatLabel="always">
+      <mat-label>Descrição</mat-label>
+      <textarea [disabled]="isDisabled" name="desDescricao" matInput placeholder="Ex.Produto Teste 123" ngModel></textarea>
+    </mat-form-field>
+
+  <div class="example-button-row">
+    <button mat-raised-button color="primary" (click)="isDisabled = false">Novo</button>
+    <button mat-raised-button color="accent" [disabled]="movimentoManual.pristine" type = "submit">Incluir</button>
+    <button mat-raised-button color="warn" (click)="movimentoManual.reset()">Limpar</button>
+  </div>
+</form>
+<br>
+  <mat-divider></mat-divider>
+

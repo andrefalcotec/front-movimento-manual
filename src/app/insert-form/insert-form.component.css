@@ -1,0 +1,47 @@
+.example-form {
+  min-width: 150px;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+.example-medium-width {
+  width: 45%;
+  margin-right:3%;
+
+}
+.example-label {
+  display: inline;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+
+.example-button-row {
+  display: table-cell;
+  width: 100%;
+}
+
+.example-button-row .mat-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.example-flex-container {
+  display: flex;
+  justify-content: right;
+  flex-wrap: wrap;
+}
+
+.example-button-container {
+  display: flex;
+  justify-content: right;
+  width: 120px;
+}
+input{
+  color:white;
+}
+textarea{
+  color:white;
+}
